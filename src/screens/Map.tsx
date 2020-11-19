@@ -96,13 +96,4 @@ const styles = StyleSheet.create({
   map: {
     flex: 1,
   },
-  input: {
-    position: 'absolute',
-    top: 60,
-    height: 40,
-    width: '80%',
-    paddingHorizontal: 10,
-    alignSelf: 'center',
-    backgroundColor: '#fff',
-  },
 });
