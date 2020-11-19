@@ -1,0 +1,19 @@
+{
+  "name": "rnmaps-poc",
+  "displayName": "rnmaps-poc",
+  "expo": {
+    "name": "rnmaps-poc",
+    "slug": "rnmaps-poc",
+    "version": "1.0.0",
+    "assetBundlePatterns": ["**/*"],
+    "description": "",
+    "android": {
+      "package": "com.michels7797.rnmapspoc",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDrs3CtZsUj1ZRz8hO5kl9JaM11Kx99T1U"
+        }
+      }
+    }
+  }
+}
