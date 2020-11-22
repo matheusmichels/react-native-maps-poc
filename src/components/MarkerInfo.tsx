@@ -1,26 +1,24 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
-import { ClientMarker } from '../utils/regions';
+import { ClientMarker } from '../utils/poles';
 
 interface MarkerInfoProps {
   marker: ClientMarker;
 }
 
-export default function MarkerInfo({ marker }: MarkerInfoProps) {
+const MarkerInfo: React.FC<MarkerInfoProps> = ({ marker }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{marker.title}</Text>
       <Text style={styles.address}>{marker.address}</Text>
       <View style={styles.footer}>
-        <Text style={styles.text}>
-          Visited in: {marker.visited.toLocaleDateString()}
-        </Text>
+        <Text style={styles.text}>Visited in: {marker.visited.toLocaleDateString()}</Text>
         <Text style={styles.text}>Sales: U$ {marker.amount}</Text>
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -53,3 +51,5 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 });
+
+export default MarkerInfo;

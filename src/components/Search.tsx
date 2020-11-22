@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, TextInputProps, View } from 'react-native';
-import {
-  NativeViewGestureHandlerProperties,
-  TextInput,
-} from 'react-native-gesture-handler';
+import { NativeViewGestureHandlerProperties, TextInput } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/EvilIcons';
 
-export type SearchProps = NativeViewGestureHandlerProperties &
-  TextInputProps & { onSearch(text: string): void };
+type SearchProps = NativeViewGestureHandlerProperties & TextInputProps & { onSearch(text: string): void };
 
-export default function Search({ onSearch, ...props }: SearchProps) {
+const Search: React.FC<SearchProps> = ({ onSearch, ...props }) => {
   const [text, setText] = useState<string>('');
 
   useEffect(() => {
@@ -23,7 +19,7 @@ export default function Search({ onSearch, ...props }: SearchProps) {
       <TextInput
         style={styles.input}
         value={text}
-        onChangeText={(value) => setText(value)}
+        onChangeText={value => setText(value)}
         autoCorrect={false}
         {...props}
       ></TextInput>
@@ -31,7 +27,7 @@ export default function Search({ onSearch, ...props }: SearchProps) {
       <Icon name="search" size={30} />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -55,3 +51,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+export default Search;
